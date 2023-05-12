@@ -4,6 +4,7 @@ pragma solidity >=0.7.0 <0.9.0;
 interface IMyVoteToken {
     function getPastVotes(address, uint256) external view returns (uint256);
 }
+
 contract Ballot {
 
     struct Proposal {
@@ -32,16 +33,15 @@ contract Ballot {
 
     function vote(uint256 proposal, uint256 amount) external {
 
-        //require(votingPower(msg.sender) >= amount);
-        // TODO: Account voting power
-        // TODO: Update votes for the proposal
+        require(votingPower(msg.sender) >= amount, "TokenizedBallot: Trying to vote more than allowed");
         votingPowerSpent[msg.sender] += amount;
         proposals[proposal].voteCount += amount;
     }
 
-    /*function votingPower(address account) public view returns (unit256){
+    function votingPower(address account) public view returns (uint256){
+        return tokenContract.getPastVotes(account, targetBlockNumber) -  votingPowerSpent[account];
+    }
 
-    }*/
     function winningProposal() public view
             returns (uint winningProposal_)
     {
