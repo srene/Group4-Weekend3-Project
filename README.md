@@ -2,7 +2,11 @@
  
 ## Tokenized Ballot Contract Homework
 
-### Contract deployment
+### Contract deployment 
+
+Script : scripts/BallotDeploy.ts
+
+The scripts deploys an MyERC20Votes token and a TokenizedBallotContract with the proposals passed as a parameter, and a specific target block number to be used to calculate the voting power.
 
 ```console
 srene@macpro project %  yarn run ts-node --files scripts/BallotDeploy.ts Vanilla Chocolate Strawberry
@@ -21,6 +25,8 @@ The ballot contract was deployed at the address 0x30531d6E7A9429573E2410d0b7C01E
 
 ```
 
+Transactions: 
+
 [Token Contract deploy tx](https://sepolia.etherscan.io/tx/0x8e1e36e5f4c989e55b5f6b09e2120f61febe105e1a992a3a2336abf14bfabf71)
 
 [TokenizedBallot Contract deploy](https://sepolia.etherscan.io/tx/0x905cc4c9075985d531336ca52a85a5513ac8931e6fbf369621ff5d578dfd77e9)
@@ -28,6 +34,10 @@ The ballot contract was deployed at the address 0x30531d6E7A9429573E2410d0b7C01E
 [Mint tx](https://sepolia.etherscan.io/tx/0xb2108d9813a5777c61d2e5e02a70cba1da26f840aa97465738f0dfc208f2c584)
 
 ### Vote delegation
+
+Script : scripts/BallotDelegate.ts
+
+In this script, we self-delegate some voting power for the minter account and we transfer some to a second account.
 
 ```console
 srene@macpro project % yarn run ts-node --files scripts/BallotDelegate.ts 
@@ -52,6 +62,10 @@ Account 0x5EE85c2890c2201Ff9E28dEDB70f38aaCC775eB4 has 50.0 voting powers after 
 
 ### Vote cast
 
+Script : scripts/BallotVote.ts
+
+In this script, we cast the votes. The first account votes for the Chocolate option with a power amount of 20 tokens, and the second account votes for the Strawberry option with an amount of 30 tokens.
+
 ```console
 srene@macpro project % yarn run ts-node --files scripts/BallotVote.ts 
 Connected to the address 0xbC3a67EC1664d540C17Aeb8F6Bea5bA89AdB9e15
@@ -67,6 +81,10 @@ Voting power 20.0
 [Votation 2](https://sepolia.etherscan.io/tx/0xd9e5b88605abf7226863c07b980a12e7b43b221958e1d193a8500243422d9633)
 
 ### Votation result
+
+Script : scripts/BallotResult.ts
+
+This result calls the winnerName function of the TokenizedBallot contract to get the winning option.
 
 ```console
 srene@macpro project % yarn run ts-node --files scripts/BallotResult.ts 
