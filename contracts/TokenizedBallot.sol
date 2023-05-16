@@ -5,7 +5,7 @@ interface IMyVoteToken {
     function getPastVotes(address, uint256) external view returns (uint256);
 }
 
-contract Ballot {
+contract TokenizedBallot {
 
     struct Proposal {
         bytes32 name;   
