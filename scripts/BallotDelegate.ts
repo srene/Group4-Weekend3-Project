@@ -5,12 +5,10 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 const MINT_VALUE = ethers.utils.parseUnits("100");
-const TOKEN_ADDRESS = "0x1bD405349A7C8F7f3beA1908D310E0a56c5595d7";
-const TOKEN_BLOCK = 3498669;
+const TOKEN_ADDRESS = "0xb52E4E103A0506792227098E2dDa957AdcAEc4B8";
 async function main() {
 
   const wallet = new ethers.Wallet(process.env.PRIVATE_KEY ?? "");
-  console.log(`Connected to the address ${wallet.address}`);
 
   //const provider = new ethers.providers.AlchemyProvider("goerli",process.env.ALCHEMY_API_KEY);
   const provider = new ethers.providers.InfuraProvider(
