@@ -6,7 +6,7 @@ const VOTED_PROPOSAL = 1
 const VOTED_PROPOSAL2 = 2
 const VOTED_AMOUNT1 = ethers.utils.parseUnits("20");
 const VOTED_AMOUNT2 = ethers.utils.parseUnits("30");
-const TOKEN_ADDRESS = "0x30531d6E7A9429573E2410d0b7C01Eb784b798aE";
+const CONTRACT_ADDRESS = "0x30531d6E7A9429573E2410d0b7C01Eb784b798aE";
 
 async function main() {
 
@@ -27,7 +27,7 @@ async function main() {
   //Get contract factory object
   const ballotContractFactory = new TokenizedBallot__factory(signer);
   //We get the  deployed contract
-  const ballotContract =  ballotContractFactory.attach(TOKEN_ADDRESS);
+  const ballotContract =  ballotContractFactory.attach(CONTRACT_ADDRESS);
   //We wait till the contract is deployed on chain
 
   const votingPower = await ballotContract.votingPower(signer.address);

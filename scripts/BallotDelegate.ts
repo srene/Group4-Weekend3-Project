@@ -20,7 +20,6 @@ async function main() {
   const wallet2 = new ethers.Wallet(process.env.PRIVATE_KEY3 ?? "");
   console.log(`Connected to the address ${wallet.address}`);
 
-
   const signer2 = wallet2.connect(provider);
   console.log(`Connected to the address ${signer2.address}`);
 

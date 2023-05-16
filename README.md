@@ -69,10 +69,7 @@ Voting power 20.0
 ### Votation result
 
 ```console
-srene@macpro project % yarn run ts-node --files ./scripts/BallotResult.ts  
-Connected to the blocknumber 3445296
-Connected to the address 0x5EE85c2890c2201Ff9E28dEDB70f38aaCC775eB4
-Balance is 9916350999553872 WEI
-The chairperson for this ballot is 0xbC3a67EC1664d540C17Aeb8F6Bea5bA89AdB9e15
-The winning proposal is Chocolate
+srene@macpro project % yarn run ts-node --files scripts/BallotResult.ts 
+Connected to the address 0xbC3a67EC1664d540C17Aeb8F6Bea5bA89AdB9e15
+Votation winner: Strawberry
 ```
