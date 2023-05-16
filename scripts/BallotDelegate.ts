@@ -1,11 +1,10 @@
 import { ethers } from "hardhat";
-import { Ballot__factory } from "../typechain-types";
 import { MyERC20Votes__factory } from "../typechain-types";
 import * as dotenv from "dotenv";
 dotenv.config();
 
 const MINT_VALUE = ethers.utils.parseUnits("100");
-const TOKEN_ADDRESS = "0xb52E4E103A0506792227098E2dDa957AdcAEc4B8";
+const TOKEN_ADDRESS = "0x20D2Ee477ADEcf8daa8BC68C8B4091Bdc1d269Ca";
 async function main() {
 
   const wallet = new ethers.Wallet(process.env.PRIVATE_KEY ?? "");

@@ -1,5 +1,5 @@
 import { ethers } from "hardhat";
-import { Ballot__factory } from "../typechain-types";
+import { TokenizedBallot__factory } from "../typechain-types";
 import { MyERC20Votes__factory } from "../typechain-types";
 
 import * as dotenv from "dotenv";
@@ -42,7 +42,7 @@ async function main() {
   });
   // TODO
   //Get contract factory object
-  const ballotContractFactory = new Ballot__factory(signer);
+  const ballotContractFactory = new TokenizedBallot__factory(signer);
   //We send deploy contract transaction
   const ballotContract = await ballotContractFactory.deploy(proposals.map(ethers.utils.formatBytes32String),tokenContract.address,lastBlock.number+TARGET_BLOCk);
   //We wait till the contract is deployed on chain
